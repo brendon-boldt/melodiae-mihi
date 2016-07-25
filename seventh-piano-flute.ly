@@ -80,13 +80,6 @@ fScaleThemeA = \relative c'' { % 8 measures
     \set Staff.ottavation = #"8va"
     d4-. e-. f-. g4.-- a-- b--
     < c \tweak font-size #-2 g>4.-- <d \tweak font-size #-2 e,>2.-- 
-    %{
-    <<
-      { c4.-- d2.-- }
-      \\
-      { g,4.-- e2.-- }
-    >>
-    %}
     
     c,4-. d-. e-. f4.-- fis-- g-- a-- b2.--
     \ottava #0
@@ -173,35 +166,70 @@ fMiddleFreeTime = \relative c''' {
   %r1
 
 }
-fOctaveTheme = \relative c' {
-  % This is actually for flute :p
-  \repeat volta 2 {
-    r4
-    \acciaccatura {a''8} c4-.
-    \acciaccatura {a8} d4-.
-    r4
-    \acciaccatura {a8} d4-.
-    \acciaccatura {a8} e'4-.
-    r4
-    \acciaccatura {a,8} d4-.
-    \acciaccatura {a8} e'4-.
-    r4
-    \acciaccatura {a,8} b4-.
-    \acciaccatura {a8} c4-.
-    r4
-    \acciaccatura {g8} b4-.
-    \acciaccatura {g8} c4-.
-    r4
-    \acciaccatura {g8} c4-.
-    \acciaccatura {g8} d'4-.
-    r4
-    \acciaccatura {g,8} d'4-.
-    \acciaccatura {g,8} e'4-.
-    r4
-    \acciaccatura {g,8} fis'4-.
-    \acciaccatura {g,8} g'4-.
-  }
 
+fThemeCvAI = \relative c'' {
+  d8( c b a f a b c)
+  d8( c b a f a b c)
+  d8( b c a b g a f)
+  c'8( b a g e g a b)
+  c8 ( b a g e g a b)
+  c8 ( a b g a fis g e)
+
+  d''8( c b a f a b c)
+  d8( c b a f a b c)
+  d8( b c a b g a f)
+  c'8( b a g e g a b)
+  c8 ( b a g e g a b)
+  c8 ( a b g a fis g e)
+}
+fScaleThemeI = \relative c'' {
+  d4.-- e4.-- f4.-- e4.-- d4.-- c4.-- d4.-- e4.--
+  c4.-- b4.-- e4.-- b4.-- c4.-- b4.-- a4.-- g4.--
+  d''4.-- c4.-- d4.-- e4.-- f4.-- e4.-- d4.-- c4.--
+  b4.-- a4.-- c4.-- b4.-- g4.-- fis4.-- e4.-- fis4.--
+
+  d8( c d e f e
+  f g a g a b)
+  d( b c a b g)
+  f( e d c b a)
+
+  c( b c d e fis
+  g fis g a b c)
+  e( d c b a g)
+  fis( e d c b a) 
+
+  d8( c d e f g
+  a g a b c d)
+  a'( g e f) e( d
+  b c) f( e c b)
+
+
+  R2.*4
+}
+fTrillTheme = \relative c'' {
+  R2.*16
+}
+fOctaveTheme = \relative c' {
+  % Add to this
+    r4 \acciaccatura {a''8} c4-.  \acciaccatura {a8} d4-.
+    r4 \acciaccatura {a8} d4-.  \acciaccatura {a8} e'4-.
+    r4 \acciaccatura {a,8} d4-.  \acciaccatura {a8} e'4-.
+    r4 \acciaccatura {a,8} b4-.  \acciaccatura {a8} c4-.
+    r4 \acciaccatura {g8} b4-.  \acciaccatura {g8} c4-.
+    r4 \acciaccatura {g8} c4-.  \acciaccatura {g8} d'4-.
+    r4 \acciaccatura {g,8} d'4-.  \acciaccatura {g,8} e'4-.
+    r4 \acciaccatura {g,8} fis'4-.  \acciaccatura {g,8} g'4-.
+    
+    r2 \afterGrace d4-.( {c16 b a)}
+    r2 \afterGrace e'4-.( {d16 c b)}
+    r2 \afterGrace b4-.( {a16 g f)}
+    r2 \afterGrace c'4-.( {b16 a g)}
+
+    r2 \afterGrace c4-.( {b16 a g)}
+    r2 \afterGrace d'4-.( {c16 b a)}
+    r2 \afterGrace a4-.( {g16 fis e)}
+    r2 \afterGrace b'4-.( {a16 g fis)}
+    \bar "|."
 }
 
 
@@ -235,8 +263,11 @@ fMusic = \relative c' {
   \repeat volta 2 {
     b''2.^\markup{first time only}~\decresc b~ b~ b R2.\!\alNiente R2.*3
   }
-  
-  %\fOctaveTheme
+  \fThemeCvAI  
+  \fScaleThemeI
+  \fTrillTheme
+
+  \fOctaveTheme
 }
 
 
@@ -358,11 +389,11 @@ pRHMiddleFreeTime = \relative c' {
   \time 72/4
   r2. r2. r2. r2.
 
-  r2 d8 f a c
+  r2 d8[ f a c]
   r2 \ottava #1 d'8 f a c \ottava #0
   r4 r4 r2
 
-  r2 c,,,8 e g b
+  r2 c,,,8[ e g b]
   r2 \ottava #1 c'8 e g b \ottava #0
   r4 r4 r2
 
@@ -374,6 +405,52 @@ pRHMiddleFreeTime = \relative c' {
   \ottava #1 <c' e g b> \ottava #0
   r1 r1 r2
   %r1 r1
+}
+pThemeCvAI = \relative c'' { % 16 m. % I == inverted
+  e2.-> e-> e->  e4 e8( f e f)
+  e2.-> e-> e-> e4 e8( fis g a)
+  b2.-> b-> b-> b4 b8( c b c)
+  b2.-> b-> b-> b2-> c4 % Not sure how I should end it
+}
+pTrillTheme = \relative c'' {
+  \acciaccatura d8 c2. \trill
+  \acciaccatura c8 b2. \trill
+  \acciaccatura b8 a2. \trill
+  \acciaccatura a8 g2. \trill
+
+  d'2. \trill
+  c2. \trill
+  b2. \trill
+  a2. \trill
+
+  d2. \trill
+  e \trill
+  f \trill
+  g \trill
+
+  \once \omit TrillSpanner
+  \pitchedTrill e2. \trill \startTrillSpan fis
+  fis2. \stopTrillSpan \trill
+  g2. \trill
+  a2. \trill
+}
+pScaleThemeI = \relative c' {
+  \repeat unfold 2 {
+    d4-. e-. f-. g4.-- a-- b-- c-- d2.--
+    c,4-. d-. e-. f4.-- g-- a-- b-- c2.--
+  }
+  \repeat unfold 2 {
+    \ottava #1
+    \set Staff.ottavation = #"8va"
+    <d d'>4-.  <e e'>-.  <f f'>-.
+    <g g'>4.-- <a a'>-- <b b'>-- <c c'>--
+    <d d'>2.-- 
+
+    <c, c'>4-.  <d d'>-.  <e e'>-.
+    <f f'>4.-- <fis fis'>-- <g g'>-- <a a'>--
+    <b b'>2.--
+    \ottava #0
+  }
 }
 
 pRHMusic = \relative c' {
@@ -398,8 +475,11 @@ pRHMusic = \relative c' {
   \time 3/4
 
   \repeat volta 2 {R2.*8}
+  \pThemeCvAI
+  \pScaleThemeI
+  \pTrillTheme
 
-  %\repeat volta 2 {R2.*8}
+  \repeat unfold 2 {R2.*8}
 }
 
 pInitDSet = \relative c { % 4 measures
@@ -422,8 +502,14 @@ pCSet = \relative c { % 4 measures
   c4-- <e g b>-. <e g b>-.
   c4-- <e g b>-. <e g a>-.
 }
-pDSetMod = \relative c {
+pDSetModInit = \relative c {
   d4--_\markup \italic {no pedal}<f a c>-. <f a d>-.
+  d4-- <f a d>-. <f a e'>-.
+  d4-- <f a c>-. <f a b>-.
+  d4-- <f a b>-. <f a c>-.
+}
+pDSetMod = \relative c {
+  d4-- <f a c>-. <f a d>-.
   d4-- <f a d>-. <f a e'>-.
   d4-- <f a c>-. <f a b>-.
   d4-- <f a b>-. <f a c>-.
@@ -485,14 +571,20 @@ pLHMusic = \relative c' {
   \pDSet \pCSet \pDSet \pCSet
   %}
 
-
   \pLHMiddleFreeTime
 
   % Second Entrance
   \pInitDSet \pCSet 
+  % ThemeCvAI
+  \pDSet \pCSet \pDSet \pCSet 
+  % ScaleThemeI
+  \pDSet \pCSet \pDSet \pCSet 
+  \pDSet \pCSet \pDSet \pCSet 
 
+  % pTrillTheme
+  \pDSet \pCSet \pDSet \pCSet 
   % pStac/octaveTheme -- probably the end
-  %\pDSetMod \pCSetMod%\pDSetMod \pCSetMod
+  \pDSetMod \pCSetMod \pDSetMod \pCSetMod
 }
 
 
