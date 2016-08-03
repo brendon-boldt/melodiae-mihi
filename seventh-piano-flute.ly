@@ -139,6 +139,7 @@ fDisArpTheme = \relative c' {
 }
 fMiddleFreeTime = \relative c''' {
   % free time
+  \once \omit Staff.TimeSignature
   d2. \fermata
   e \fermata
   c \fermata
@@ -183,11 +184,29 @@ fThemeCvAI = \relative c'' {
   c8 ( a b g a fis g e)
 }
 fScaleThemeI = \relative c'' {
-  d4.-- e4.-- f4.-- e4.-- d4.-- c4.-- d4.-- e4.--
-  c4.-- b4.-- e4.-- b4.-- c4.-- b4.-- a4.-- g4.--
-  d''4.-- c4.-- d4.-- e4.-- f4.-- e4.-- d4.-- c4.--
+  %d4.-- e4.-- f4.-- e4.-- d4.-- c4.-- d4.-- e4.--
+  %c4.-- b4.-- e4.-- b4.-- c4.-- b4.-- a4.-- g4.--
+  d2. f a c
+  g b c e
+
+
+  d4.-- c4.-- d4.-- e4.-- f4.-- e4.-- d4.-- c4.--
   b4.-- a4.-- c4.-- b4.-- g4.-- fis4.-- e4.-- fis4.--
 
+  d4 e f
+  e f g
+  f g a
+  d c b
+
+  e f g
+  d c b
+  a b c
+  g fis e
+  
+}
+fTrillTheme = \relative c'' {
+  % This does not actually line up directly with the tirlls,
+  % but that might be okay.
   d8( c d e f e
   f g a g a b)
   d( b c a b g)
@@ -200,14 +219,19 @@ fScaleThemeI = \relative c'' {
 
   d8( c d e f g
   a g a b c d)
-  a'( g e f) e( d
-  b c) f( e c b)
+  a'( g e f) d( c
+  a b) f( e c b)
 
+  e( d e fis g a)
+  b( c b a g fis)
+  e( d c) c( b a)
+  a( g fis) fis( e d)
 
-  R2.*4
-}
-fTrillTheme = \relative c'' {
-  R2.*16
+  \tuplet 14/12 {d16([ e f g a b c] d[ e f g a b c])} d2. 
+  \tuplet 18/12 {d,,16( e f g a b c d e f g a b c d e f g)} a2. 
+  \tuplet 14/12 {c,,,16([d e fis g a b] c[d e fis g a b])} c2. 
+  \tuplet 20/12 {c,,16([ d e fis g a b] c[ d e fis g a b] c[ d e fis g a])} b2. 
+  
 }
 fOctaveTheme = \relative c' {
   % Add to this
@@ -222,10 +246,10 @@ fOctaveTheme = \relative c' {
     
     r2 \afterGrace d4-.( {c16 b a)}
     r2 \afterGrace e'4-.( {d16 c b)}
-    r2 \afterGrace b4-.( {a16 g f)}
-    r2 \afterGrace c'4-.( {b16 a g)}
+    r2 \afterGrace b4-.( {a16 g e)}
+    r2 \afterGrace c'4-.( {b16 a f)}
 
-    r2 \afterGrace c4-.( {b16 a g)}
+    r2 \afterGrace c'4-.( {b16 a g)}
     r2 \afterGrace d'4-.( {c16 b a)}
     r2 \afterGrace a4-.( {g16 fis e)}
     r2 \afterGrace b'4-.( {a16 g fis)}
@@ -237,7 +261,7 @@ alNienteText = \markup {\center-align \line {
   \normal-text\italic { al niente }}}
 alNiente = #(make-dynamic-script alNienteText)
 fMusic = \relative c' {
-  %{
+  %%{
   \tempo "Free tempo, very slow"
   \fIntro
   \time 3/4
@@ -256,12 +280,12 @@ fMusic = \relative c' {
   \fMainThemevA
   \fThemeBvA
   \fDisArpTheme
-  %}
+  %%}
 
   \fMiddleFreeTime
   %\time 3/4
   \repeat volta 2 {
-    b''2.^\markup{first time only}~\decresc b~ b~ b R2.\!\alNiente R2.*3
+    b,2.^\markup{first time only}~\decresc b~ b~ b R2.\!\alNiente R2.*3
   }
   \fThemeCvAI  
   \fScaleThemeI
@@ -341,10 +365,10 @@ pScaleThemeA = \relative c'' { % 8 measures
 }
 pMainTheme = \relative c'' { % 16 measures
   %\tempo 2. = 60
-  d,2\mf( e4-.) d2( e4-.) f2( g4-.) a2( b4-.)
-  c4-- e,2~ e2. c'4\pp-- e,2~ e2.
-  d2\mf( e4) d2( e4) d2( e4) f2( g4)
-  b4-- e,2~ e2. b'4\pp-- e,2~ e2.
+  d,2\mf( e4-.) d2( e4-.) f2( g4-.) a2( b4~)
+  b2. c4-- e,2~ e2. c'4\pp-- e,2 
+  d2\mf( e4) d2( e4) d2( e4) f2( g4~)
+  g2. b4-- e,2~ e2. b'4\pp-- e,2
 }
 pDisArpTheme = \relative c' { %8 measures
   \repeat percent 3 d4\pp\<
@@ -380,12 +404,13 @@ pMainThemevA = \relative c'' { % 16 measures
   %\tempo 2. = 60
   \pMainTheme
 
-  e,2\mf( d4-.) e2( d4-.) f2( g4-.) a2( b4-.)
-  c4-- e,2~ e2. c'4\pp-- e,2~ e2.
-  e2\mf( d4) e2( d4) e2( d4) f2( g4)
-  b4-- d,2~ d2. b'4\pp-- d,2~ d2.
+  e,2\mf( d4-.) e2( d4-.) f2( g4-.) a2( b4~)
+  b2. c4-- e,2~ e2. c'4\pp-- e,2
+  e2\mf( d4) e2( d4) e2( d4) f2( g4~)
+  g2. b4-- d,2~ d2. b'4\pp-- d,2
 }
 pRHMiddleFreeTime = \relative c' {
+  \once \omit Staff.TimeSignature
   \time 72/4
   r2. r2. r2. r2.
 
@@ -454,7 +479,7 @@ pScaleThemeI = \relative c' {
 }
 
 pRHMusic = \relative c' {
-  %{
+  %%{
   \pRHIntro
   \repeat volta 2 {R2.^\markup\italic{"accel. poco a poco"} R2.*7}
   \pEntrance
@@ -468,7 +493,7 @@ pRHMusic = \relative c' {
   \pMainThemevA %8va?
   \pThemeB
   \pDisArpTheme\pDisArpTheme
-  %}
+  %%}
 
   \pRHMiddleFreeTime
   
@@ -521,6 +546,7 @@ pCSetMod = \relative c {
   c4-- <e g a>-. <e g b>-.
 }
 pLHMiddleFreeTime = \relative c {
+  \once \omit Staff.TimeSignature
   r4 <d f a c>2~ \fermata
   <d f a c>4 <c e g b>2~ \fermata
   <c e g b>4 <d f a c>2~ \fermata
@@ -545,7 +571,7 @@ pLHMiddleFreeTime = \relative c {
 }
 
 pLHMusic = \relative c' {
-  %{
+  %%{
   \pLHIntro
   %\time 3/4
   \pInitDSet \pCSet \pDSet \pCSet
@@ -569,7 +595,7 @@ pLHMusic = \relative c' {
   \pDSet \pCSet \pDSet \pCSet
   % DisArpTheme
   \pDSet \pCSet \pDSet \pCSet
-  %}
+  %%}
 
   \pLHMiddleFreeTime
 
