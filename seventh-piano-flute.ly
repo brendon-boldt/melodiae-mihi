@@ -6,9 +6,10 @@
 }
 
 %{ Notes (markdown)
-- Add the piano eight notes during the flute entrance
-- ^ Or not?
-- Consider repeat 'percents' where appropriate
+- Change the double e
+- Change the octaves of the second main theme (piano)
+- Change the triplets to eighth notes
+- Change the "arpeegios" to the correct chords
 %}
 
 fIntro = \relative c'' {
@@ -169,12 +170,12 @@ fMiddleFreeTime = \relative c''' {
 }
 
 fThemeCvAI = \relative c'' {
-  d8( c b a f a b c)
-  d8( c b a f a b c)
-  d8( b c a b g a f)
-  c'8( b a g e g a b)
-  c8 ( b a g e g a b)
-  c8 ( a b g a fis g e)
+  c8( b a g e g a b)
+  c8( b a g e g a b)
+  c8( a b g a f g e)
+  b'8( a g fis d fis g a)
+  b8 ( a g fis d fis g a)
+  b8 ( g a fis g e fis d)
 
   d''8( c b a f a b c)
   d8( c b a f a b c)
@@ -182,7 +183,22 @@ fThemeCvAI = \relative c'' {
   c'8( b a g e g a b)
   c8 ( b a g e g a b)
   c8 ( a b g a fis g e)
+
+  c'8( b a g e e a b)
+  c8( b a g e g a b)
+  c8( a b g a f g e)
+  b'8( a g fis d fis g a)
+  b8 ( a g fis d fis g a)
+  b8 ( g a fis g e fis d)
+
+  d8( c b a f a b c)
+  d8( c b a f a b c)
+  d8( b c a b g a f)
+  c'8( b a g e g a b)
+  c8 ( b a g e g a b)
+  c8 ( a b g a fis g e)
 }
+% This might need to be changed to match the piano part
 fScaleThemeI = \relative c'' {
   %d4.-- e4.-- f4.-- e4.-- d4.-- c4.-- d4.-- e4.--
   %c4.-- b4.-- e4.-- b4.-- c4.-- b4.-- a4.-- g4.--
@@ -344,22 +360,22 @@ pArpeggio = \relative c'' {
 }
 pScaleThemeA = \relative c'' { % 8 measures
   <d d'>4.-- <e e'>4.--
-  <f f'>4.-- <e e'>4.--
+  <c c'>4.-- <e e'>4.--
   <d d'>4.-- <c c'>4.--
   <d d'>4.-- <e e'>4.--
 
+  <c c'>4.-- <e e'>4.--
   <c c'>4.-- <b b'>4.--
-  <e e'>4.-- <b b'>4.--
   <c c'>4.-- <b b'>4.--
   <a a'>4.-- <g g'>4.--
 
   <d' d'>4.-- <c c'>4.--
   <d d'>4.-- <e e'>4.--
   <f f'>4.-- <e e'>4.--
-  <d d'>4.-- <c c'>4.--
+  <d d'>4.-- <e e'>4.--
 
-  <b b'>4.-- <a a'>4.--
-  <c c'>4.-- <b b'>4.--
+  <c c'>4.-- <b a'>4.--
+  <a a'>4.-- <b b'>4.--
   <g g'>4.-- <fis fis'>4.--
   <e e'>4.-- <fis fis'>4.--
 }
@@ -367,7 +383,7 @@ pMainTheme = \relative c'' { % 16 measures
   %\tempo 2. = 60
   d,2\mf( e4-.) d2( e4-.) f2( g4-.) a2( b4~)
   b2. c4-- e,2~ e2. c'4\pp-- e,2 
-  d2\mf( e4) d2( e4) d2( e4) f2( g4~)
+  d2\mf( e4-.) d2( e4-.) d2( e4-.) f2( g4~)
   g2. b4-- e,2~ e2. b'4\pp-- e,2
 }
 pDisArpTheme = \relative c' { %8 measures
@@ -383,6 +399,7 @@ pDisArpTheme = \relative c' { %8 measures
   \f
 }
 pThemeCvA = \relative c''' {
+  %{
   \ottava #1
   \set Staff.ottavation = #"8va"
   d8( c b a f a b c)
@@ -399,6 +416,22 @@ pThemeCvA = \relative c''' {
   c'8( b a g e g a b)
   c8 ( b a g e g a b)
   c8 ( a b g a fis g e)
+  %}
+
+  c8( b a g e g a b)
+  c8( b a g e g a b)
+  c8( a b g a f g e)
+  b'8( a g fis d fis g a)
+  b8 ( a g fis d fis g a)
+  b8 ( g a fis g e fis d ~)
+
+  d8( c b a f a b c)
+  d8( c b a f a b c)
+  d8( b c a b g a f)
+  c'8( b a g e g a b)
+  c8 ( b a g e g a b)
+  c8 ( a b g a fis g e)
+
 }
 pMainThemevA = \relative c'' { % 16 measures
   %\tempo 2. = 60
@@ -406,8 +439,8 @@ pMainThemevA = \relative c'' { % 16 measures
 
   e,2\mf( d4-.) e2( d4-.) f2( g4-.) a2( b4~)
   b2. c4-- e,2~ e2. c'4\pp-- e,2
-  e2\mf( d4) e2( d4) e2( d4) f2( g4~)
-  g2. b4-- d,2~ d2. b'4\pp-- d,2
+  e2\mf( d4-.) e2( d4-.) e2( d4-.) f2( g4~)
+  g2. b4-- e,2~ e2. b'4\pp-- e,2
 }
 pRHMiddleFreeTime = \relative c' {
   \once \omit Staff.TimeSignature
@@ -435,9 +468,30 @@ pThemeCvAI = \relative c'' { % 16 m. % I == inverted
   e2.-> e-> e->  e4 e8( f e f)
   e2.-> e-> e-> e4 e8( fis g a)
   b2.-> b-> b-> b4 b8( c b c)
-  b2.-> b-> b-> b2-> c4 % Not sure how I should end it
+  b2.-> b-> b-> b8->( e c) b->( fis e)
 }
-pTrillTheme = \relative c'' {
+pThemeBRev = \relative c'' { % 32 m. % I == inverted
+  \repeat percent 2<e g a b c>4.--
+  <e g a b c>4-. r4 <e g a b c>-.
+  \repeat percent 2<e g a b c>4.--
+  <e g a b c>4-. r4 <e g a b c>-.
+
+  \repeat percent 2 <d fis g a b>4.--
+  <d fis g a b>4-. r4 <d fis g a b>-.
+  \repeat percent 2 <d fis g a b>4.--
+  <d fis g a b>4-. r4 <d fis g a b>-.
+
+  \repeat percent 2 <f a b c d>4.--
+  <f a b c d>4-. r4 <f a b c d>-.
+  \repeat percent 2 <f a b c d>4.--
+  <f a b c d>4-. r4 <f a b c d>-.
+
+  \repeat percent 2 <e g a b c>4.--
+  <e g a b c>4-. r4 <e g a b c>-.
+  \repeat percent 2 <e g a b c>4.--
+  <e g a b c>4-. r4 <e g a b c>-.
+}
+pTrillTheme = \relative c'' { % 16 m.
   \acciaccatura d8 c2. \trill
   \acciaccatura c8 b2. \trill
   \acciaccatura b8 a2. \trill
@@ -501,10 +555,14 @@ pRHMusic = \relative c' {
 
   \repeat volta 2 {R2.*8}
   \pThemeCvAI
+  \pThemeBRev
   \pScaleThemeI
+
+  %\repeat unfold 16 {r4 r r}
   \pTrillTheme
 
-  \repeat unfold 2 {R2.*8}
+  R2.*16
+  %\repeat unfold 2 {R2.*8}
 }
 
 pInitDSet = \relative c { % 4 measures
@@ -603,6 +661,7 @@ pLHMusic = \relative c' {
   \pInitDSet \pCSet 
   % ThemeCvAI
   \pDSet \pCSet \pDSet \pCSet 
+  \pDSet \pCSet \pDSet \pCSet 
   % ScaleThemeI
   \pDSet \pCSet \pDSet \pCSet 
   \pDSet \pCSet \pDSet \pCSet 
@@ -610,7 +669,7 @@ pLHMusic = \relative c' {
   % pTrillTheme
   \pDSet \pCSet \pDSet \pCSet 
   % pStac/octaveTheme -- probably the end
-  \pDSetMod \pCSetMod \pDSetMod \pCSetMod
+  \pDSetModInit \pCSetMod \pDSetMod \pCSetMod
 }
 
 
@@ -618,8 +677,8 @@ pLHMusic = \relative c' {
 \score { <<
   \new Staff \with { 
     instrumentName = #"Flute"
-    fontSize = #-2
-    \override StaffSymbol.staff-space = #(magstep -2)
+    %fontSize = #-2
+    %\override StaffSymbol.staff-space = #(magstep -2)
     %%\once \omit TimeSignature
   } {
     \key c \major
@@ -628,7 +687,7 @@ pLHMusic = \relative c' {
     \fMusic
   }
    
-  %%{
+  %{
   \new PianoStaff { <<
     \set PianoStaff.instrumentName = #"Piano"
     \new Staff = "RH" << 
@@ -644,5 +703,7 @@ pLHMusic = \relative c' {
       \pLHMusic
     >>
   >> }
-  %%}
->> }
+  %}
+>>
+  %\midi { }
+}
