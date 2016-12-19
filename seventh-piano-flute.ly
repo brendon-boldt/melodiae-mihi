@@ -7,8 +7,6 @@
 
 %{ Notes (markdown)
 - Change the double e
-- Change the octaves of the second main theme (piano)
-- Change the triplets to eighth notes
 - Change the "arpeegios" to the correct chords
 %}
 
@@ -128,15 +126,15 @@ fDisArpTheme = \relative c' {
   b'2.
   %e,( b' c)
 
-  \repeat unfold 3 \tuplet 3/2 {d,,,8( e a)}
-  \repeat unfold 3 \tuplet 3/2 {e( a d)}
-  \repeat unfold 3 \tuplet 3/2 {a( d e)}
-  \repeat unfold 3 \tuplet 3/2 {d( e a)}
+  \repeat unfold 2 {d,,,8( e a)}
+  \repeat unfold 2 {e( a d)}
+  \repeat unfold 2 {a( d e)}
+  \repeat unfold 2 {d( e a)}
 
-  \repeat unfold 3 \tuplet 3/2 {e,8( b' c)}
-  \repeat unfold 3 \tuplet 3/2 {b( c e)}
-  \repeat unfold 3 \tuplet 3/2 {c( e b')}
-  \repeat unfold 3 \tuplet 3/2 {e,( b' c)}
+  \repeat unfold 2 {e,8( b' c)}
+  \repeat unfold 2 {b( c e)}
+  \repeat unfold 2 {c( e b')}
+  \repeat unfold 2 {e,( b' c)}
 }
 fMiddleFreeTime = \relative c''' {
   % free time
@@ -147,14 +145,16 @@ fMiddleFreeTime = \relative c''' {
   b \fermata
 
   r1 r1
-  r4 \repeat volta 2 {\tuplet 3/2 {d8([^\markup \italic {"repeat ad lib."}
-  c b)]}}
+  %r4 \repeat volta 2 {\tuplet 3/2 {d8([^\markup \italic {"repeat ad lib."}
+  r4 \bar "[|:" {\tuplet 3/2 {d8([^\markup \italic {"repeat ad lib."}
+  c b)]}} \bar ":|]"
   b2~\trill\fermata b1
 
 
   r1
-  r4 \repeat volta 2 {\tuplet 3/2 {b8([
-  c d)]}}
+  %r4 \repeat volta 2 {\tuplet 3/2 {b8([
+  r4 \bar "[|:" {\tuplet 3/2 {b8([^\markup \italic {"repeat ad lib."}
+  c d)]}} \bar ":|]"
   d2~\trill\fermata d1 r1
 
   \ottava #1
@@ -435,9 +435,15 @@ pThemeCvA = \relative c''' {
 }
 pMainThemevA = \relative c'' { % 16 measures
   %\tempo 2. = 60
-  \pMainTheme
+  %\pMainTheme
 
-  e,2\mf( d4-.) e2( d4-.) f2( g4-.) a2( b4~)
+  % TODO what should these be?
+  d2\mf( e4-.) d2( e4-.) f2( g4-.) a2( b4~)
+  b2. c4-- e,2~ e2. c'4\pp-- e,2 
+  d2\mf( e4-.) d2( e4-.) d2( e4-.) f2( g4~)
+  g2. b4-- e,2~ e2. b'4\pp-- e,2
+
+  e2\mf( d4-.) e2( d4-.) f2( g4-.) a2( b4~)
   b2. c4-- e,2~ e2. c'4\pp-- e,2
   e2\mf( d4-.) e2( d4-.) e2( d4-.) f2( g4~)
   g2. b4-- e,2~ e2. b'4\pp-- e,2
@@ -687,7 +693,6 @@ pLHMusic = \relative c' {
     \fMusic
   }
    
-  %{
   \new PianoStaff { <<
     \set PianoStaff.instrumentName = #"Piano"
     \new Staff = "RH" << 
@@ -703,7 +708,6 @@ pLHMusic = \relative c' {
       \pLHMusic
     >>
   >> }
-  %}
 >>
   %\midi { }
 }
