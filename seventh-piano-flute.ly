@@ -184,7 +184,7 @@ fThemeCvAI = \relative c'' {
   c8 ( b a g e g a b)
   c8 ( a b g a fis g e)
 
-  c'8( b a g e e a b)
+  c'8( b a g e g a b)
   c8( b a g e g a b)
   c8( a b g a f g e)
   b'8( a g fis d fis g a)
@@ -200,14 +200,11 @@ fThemeCvAI = \relative c'' {
 }
 % This might need to be changed to match the piano part
 fScaleThemeI = \relative c'' {
-  %d4.-- e4.-- f4.-- e4.-- d4.-- c4.-- d4.-- e4.--
-  %c4.-- b4.-- e4.-- b4.-- c4.-- b4.-- a4.-- g4.--
   d2. f a c
   g b c e
 
-
-  d4.-- c4.-- d4.-- e4.-- f4.-- e4.-- d4.-- c4.--
-  b4.-- a4.-- c4.-- b4.-- g4.-- fis4.-- e4.-- fis4.--
+  d4.-- c4.-- d4.-- e4.-- b4.-- c4.-- f4.-- e4.--
+  c4.-- a4.-- a4.-- b4.-- g4.-- fis4.-- e4.-- fis4.--
 
   d4 e f
   e f g
@@ -371,6 +368,16 @@ pScaleThemeA = \relative c'' { % 8 measures
 
   <d' d'>4.-- <c c'>4.--
   <d d'>4.-- <e e'>4.--
+  <b b'>4.-- <c c'>4.--
+  <f f'>4.-- <e e'>4.--
+
+  <c c'>4.-- <b a'>4.--
+  <a a'>4.-- <b b'>4.--
+  <g g'>4.-- <fis fis'>4.--
+  <e e'>4.-- <fis fis'>4.--
+  %{
+  <d' d'>4.-- <c c'>4.--
+  <d d'>4.-- <e e'>4.--
   <f f'>4.-- <e e'>4.--
   <d d'>4.-- <e e'>4.--
 
@@ -378,6 +385,7 @@ pScaleThemeA = \relative c'' { % 8 measures
   <a a'>4.-- <b b'>4.--
   <g g'>4.-- <fis fis'>4.--
   <e e'>4.-- <fis fis'>4.--
+  %}
 }
 pMainTheme = \relative c'' { % 16 measures
   %\tempo 2. = 60
@@ -437,10 +445,9 @@ pMainThemevA = \relative c'' { % 16 measures
   %\tempo 2. = 60
   %\pMainTheme
 
-  % TODO what should these be?
-  d2\mf( e4-.) d2( e4-.) f2( g4-.) a2( b4~)
+  d,2\mf( a'4-.) d2( e4-.) f2( g4-.) a2( b4~)
   b2. c4-- e,2~ e2. c'4\pp-- e,2 
-  d2\mf( e4-.) d2( e4-.) d2( e4-.) f2( g4~)
+  f,2\mf( a4-.) d2( e4-.) d2( e4-.) f2( g4~)
   g2. b4-- e,2~ e2. b'4\pp-- e,2
 
   e2\mf( d4-.) e2( d4-.) f2( g4-.) a2( b4~)
@@ -503,10 +510,10 @@ pTrillTheme = \relative c'' { % 16 m.
   \acciaccatura b8 a2. \trill
   \acciaccatura a8 g2. \trill
 
-  d'2. \trill
-  c2. \trill
-  b2. \trill
-  a2. \trill
+  \acciaccatura e'8 d2. \trill
+  \acciaccatura d8 c2. \trill
+  \acciaccatura c8 b2. \trill
+  \acciaccatura b8 a2. \trill
 
   d2. \trill
   e \trill
@@ -678,11 +685,14 @@ pLHMusic = \relative c' {
   \pDSetModInit \pCSetMod \pDSetMod \pCSetMod
 }
 
+%\include "general-tools/clip-regions/definitions.ily"
+%\setClipRegion 34 49
 
 \version "2.18.2"
 \score { <<
   \new Staff \with { 
     instrumentName = #"Flute"
+    midiInstrument = #"flute"
     %fontSize = #-2
     %\override StaffSymbol.staff-space = #(magstep -2)
     %%\once \omit TimeSignature
@@ -693,6 +703,7 @@ pLHMusic = \relative c' {
     \fMusic
   }
    
+  %{
   \new PianoStaff { <<
     \set PianoStaff.instrumentName = #"Piano"
     \new Staff = "RH" << 
@@ -708,6 +719,7 @@ pLHMusic = \relative c' {
       \pLHMusic
     >>
   >> }
+	%}
 >>
   %\midi { }
 }
