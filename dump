@@ -1,0 +1,23 @@
+fApC = \relative c'' {
+  r2
+  b16( a g8) d'4 r4 b16( a g8) b4 r4 
+  c16( b a8) e4 r4 c'16( b a8) c4 r4
+
+  b16( a g8) g4 r4 d'16( c b8) b4 r4 
+  c16( b a8) a4 r4 e'16( d c8) c4 r4
+}
+fBpC = \relative c'' {
+  r4
+  b16( a g8) b4r4 b16( a g8) g4r4
+  c16( b a8) c4r4 c16( b a8) a4r4
+
+  d16( c b8) b4 r4 b16( a g8) d'4 r4 
+  e16( d c8) c4 r4 c16( b a8) e'4 r4
+}
+fCpC = \relative c'' {
+  b16( a g8)  g4 r4 b16( a g8) d4 r4 
+  c'16( b a8)  a4 r4 c16( b a8) e4 r4
+
+  b'16( a g8) d'4 r4 d16( c b8) g'4 r4 
+  c,16( b a8) e'4 r4 e16( d c8) a'4 r4
+}
