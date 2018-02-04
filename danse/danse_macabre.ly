@@ -166,18 +166,119 @@ flF = \relative c' {
   \acciaccatura {d8 a'} fis'4
   g r r
   \compressFullBarRests
-  R2.*6 a,4
+  R2.*6
 
 
 }
 flG = \relative c'' {
   \mark \default
+  r4 r a4
+  d8 d d4 d
+  c8 c c4 c
+  b8 b b4 b
+  bes8 bes bes4 bes
+  a8 a b b d d
+  c8 c b b a a
+  c8 c a'4 c,
+
+  bes8 a g a bes c
+  d4 r8 a8 g a
+  bes8 a g bes a g
+  c4 r8 c8 bes a
+  bes4 r8 a g bes
+  d4 r8 bes g d'
+  cis16( d cis d cis8) r8 a'4
+
+  %\acciaccatura{}
+  d,2 d4
+  c2 c4
+  b2 b4
+  bes2 bes4
+  a4 b d
+  c4 b a
+  c2 c4
+  \p
+  bes8-. d g, a bes c
+  d8 cis d f e d
+  g8 fis g bes a g
+  c8 b bes a g fis
+  f8 d cis c b bes
+  a8 b cis d e f
+  a8( b c cis d dis)
+    
 }
 flH = \relative c'' {
   \mark \default
+  \key f \major
+  e'4 \tuplet 3/2 {e,8( f e)} e4-.
+  \repeat unfold 15 {r4 \tuplet 3/2 {e8( f e)} e4-.}
+  r4 r f
+  e r f
+  d r e
+  cis r d
+  d r f
+  f r g
+  f e d
+  f r e
+  e r g
+  f r g
+  e r f
+  d r e
+  e r g
+  g r a
+  g f e
+  g r %ais,
 }
 flI = \relative c'' {
   \mark \default
+
+  ais4(
+  \key d \major
+  b4) r fis( \p
+  b2) b4(
+  ais2) ais4(
+  a2) a4(
+  g2) g4(
+  fis4 g b
+  a g fis
+  g2) g4(
+  b2.) ~ b2. ~
+  b4 r4 r4
+
+  \compressFullBarRests
+  R2.*5
+
+  r4 r fis(
+  b2) b4(
+  ais2) ais4(
+  a2) a4(
+  gis2) gis4(
+  e4 fis a
+  g fis e
+  g2) g4(
+  fis2.) ~ fis2. ~
+  fis4 r r
+  r2.
+  e2. ~ e2. % b
+  e2. ~ e2. % ais
+  \tuplet 3/2 {b8( c cis} \tuplet 3/2 {d dis e} \tuplet 3/2 {eis fis g}
+  \tuplet 3/2 {gis a ais} \tuplet 3/2 {b c cis} \tuplet 3/2 {d dis e)}
+  \tuplet 3/2 {eis( fis g} \tuplet 3/2 {gis a ais} \tuplet 3/2 {b ais a}
+  \tuplet 3/2 {gis g fis} \tuplet 3/2 {f e dis} \tuplet 3/2 {d cis c)}
+  \tuplet 3/2 {b( ais a} \tuplet 3/2 {gis g fis} \tuplet 3/2 {f e dis}
+  \tuplet 3/2 {d cis c} \tuplet 3/2 {b c cis} \tuplet 3/2 {d dis e)}
+  \tuplet 3/2 {eis( fis g} \tuplet 3/2 {gis a ais} \tuplet 3/2 {b bis cis}
+  \tuplet 3/2 {d dis e} \tuplet 3/2 {eis fis g} \tuplet 3/2 {gis a ais}
+  b4)
+
+  dis,,8-. fis dis eis
+  fis8 fis eis eis dis4
+  r4 dis'8-. fis dis eis
+  fis8 fis eis eis dis4
+  r4 c'8 ees c d
+  ees8 ees d d c4
+  r4 c,8 ees c d
+  ees8 ees d d c4
 }
 flJ = \relative c'' {
   \mark \default
@@ -208,11 +309,11 @@ flP = \relative c'' {
     instrumentName = #"Flute"
     midiInstrument = #"flute"
   } {
+    \accidentalStyle modern
 	\tempo 2. = 60
     \key bes \major
     \time 3/4
-	%{
-	%}
+    %{
     \flpreA
     \flA
     \flB
@@ -220,6 +321,12 @@ flP = \relative c'' {
     \flD
     \flE
     \flF
+    \flG
+    %}
+    \flH
+    \flI
+    \flJ
+
   }
 
    
