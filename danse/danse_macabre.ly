@@ -282,12 +282,97 @@ flI = \relative c'' {
 }
 flJ = \relative c'' {
   \mark \default
+  \key bes \major
+
+  \tuplet 3/2 {g8([ ees c')} \tuplet 3/2 {g'( c, ees,]} g4 ~
+  \tuplet 3/2 {g8[ ees c')} \tuplet 3/2 {g'( c, ees,]} g4 ~
+
+  \tuplet 3/2 {g8[ e c')} \tuplet 3/2 {g'( c, e,]} g4 ~
+  \tuplet 3/2 {g8[ e c')} \tuplet 3/2 {g'( c, e,]} g4
+
+  \tuplet 3/2 {a8[ f c')} \tuplet 3/2 {a'( c, f,]} a4 ~
+  \tuplet 3/2 {a8[ f c')} \tuplet 3/2 {a'( c, f,]} a4 ~
+
+  \tuplet 3/2 {a8[ e cis')} \tuplet 3/2 {a'( cis, e,]} a4 ~
+  \tuplet 3/2 {a8[ e cis')} \tuplet 3/2 {a'( cis, e,]} a4
+
+  \tuplet 3/2 {bes8[ f d')} \tuplet 3/2 {bes'( d, f,]} bes4 ~
+  \tuplet 3/2 {bes8[ f d')} \tuplet 3/2 {bes'( d, f,]} bes4
+
+  \tuplet 3/2 {c8[ g e')} \tuplet 3/2 {c'( e, g,]} c4 ~
+
+  \tuplet 3/2 {c8[ g ees')} \tuplet 3/2 {c'( ees, g,]} c4
+
+  \tuplet 3/2 {d8[ a fis')} \tuplet 3/2 {d'( fis, a,]} d4
+  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4
+
+  \tuplet 3/2 {d8[ a fis')} \tuplet 3/2 {d'( fis, a,]} d4
+  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4
+
+  \tuplet 3/2 {d8[ a fis')} \tuplet 3/2 {d'( fis, a,]} d4
+  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4 ~
+
+  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4 ~
+  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4)
 }
+
 flK = \relative c'' {
   \mark \default
+  r2. d2 d4
+  r2. d2 d4
+  r2. d2 d4(
+  a'2) a4
+  g2 g4
+  f2 f4
+  ees2 ees4
+  d2 d4
+  ees2 ees4
+  d2 d4
+  ees2 ees4
+  d2 d4
+  d2 d4
+  d2 d4
+  d2 d4
+
+  d4 a8 a a a
+  d4 a8 a a a
+  d4 a8 a a a
+  d4 a4 d
+
+  r4 g,8 bes g a
+  bes4 ees,8 g ees f
+  g4 bes8 ees, bes' d,
+  ees4-- ees8 ees ees ees
+
+  d4 a'8 a a a
+  d4 a8 a a a
+  d4 a8 a a a
+  d4 a4 d
+
+  r4 g8 bes g a
+  bes4 ees,8 g ees f
+  g4 bes8 ees, bes' d,
+  ees4-- ees8 ees ees ees
+  d4 r4 %a4
 }
 flL = \relative c'' {
   \mark \default
+  r2
+
+  a4 \f
+  ees'8 ees ees4 a,
+  ees'8 a, ees' a, ees' a,
+  ees'4 a, r
+  r4 r des
+  des8 des des4 des
+  des8 des des des des des
+  des4 des r4
+  r4 r c
+  c8 c c4 r
+  r4 r bes
+  bes8 bes bes4 g4 \p % g + bes => fis + a
+  fis4 r4 r
+
 }
 flM = \relative c'' {
   \mark \default
@@ -322,10 +407,12 @@ flP = \relative c'' {
     \flE
     \flF
     \flG
-    %}
     \flH
     \flI
     \flJ
+    \flK
+    %}
+    \flL
 
   }
 
