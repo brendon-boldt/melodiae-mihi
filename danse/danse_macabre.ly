@@ -315,7 +315,6 @@ flJ = \relative c'' {
   \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4 ~
   \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4)
 }
-
 flK = \relative c'' {
   \mark \default
   r2. d2 d4
@@ -370,12 +369,59 @@ flL = \relative c'' {
   r4 r c
   c8 c c4 r
   r4 r bes
-  bes8 bes bes4 g4 \p % g + bes => fis + a
-  fis4 r4 r
+  bes8 bes bes4 bes4 \p % g + bes => fis + a
+  a4 r4 r
 
+  R2.
+  r4 r d(
+  f4 e d
+  e2.
+  a,2.)
+  r4 r c(
+  ees4 d c
+  d2.
+  g,2.)
+  r4 r g(
+  bes4 a g
+  a2 e4)
+
+  g2. ~ g2.( ees2.)
+  d2.~d2.~d4 r r
+
+  R2.
+
+  a'2( bes4
+  d des c)
+  b2( c4)
+  ees2( d4)
+  f2( ees4)
+  g2( fis4)
 }
 flM = \relative c'' {
   \mark \default
+
+  r4 c8( ees c d
+  ees8-> c ees d c bes)
+  r4 c8( ees c d
+  ees8-> c ees d c bes)
+  r4 c'8( ees c d)
+  ees8->( c ees d c bes)
+  ees8->( c ees d c bes)
+  ees8-. c-. ees-. d-. c-. bes-.
+  c 8bes a fis a g
+  fis8 c ees d c a
+  c8 bes a fis a g
+
+  fis8 c'( ees d c a)
+  r8 c( ees d c a)
+  r8 c( ees d c a)
+  r8 c( ees d c a)
+
+  r8 d,( ees e f fis
+  g8 gis a bes b c
+  cis8 d) dis-. e fis g
+  a bes c d e fis
+  % g4-.
 }
 flN = \relative c'' {
   \mark \default
@@ -411,8 +457,10 @@ flP = \relative c'' {
     \flI
     \flJ
     \flK
-    %}
     \flL
+    \flM
+    %}
+    \flN
 
   }
 
