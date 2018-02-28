@@ -425,9 +425,51 @@ flM = \relative c'' {
 }
 flN = \relative c'' {
   \mark \default
+  g''4-. \ff
+  
+  \ottava #1
+  g8 bes g a
+  bes4 a8 bes g bes
+  a([ g)] g bes g a
+  bes4 a8 bes g bes
+  a([ g)] g bes g a
+  bes4 a8 bes g bes
+  d,4  e8 fis d fis
+  d'4 a,8 bes b cis
+  d4 g8 bes g a
+  bes4 a8 bes g bes
+  a([ g)] g bes g a
+  bes4 a8 bes g bes
+  a([ g)] g bes g a
+  bes4 a8 bes g bes
+  d,4 e8 fis d fis
+  d'4 a,8 bes b cis
+  \ottava #0
+  d,4 \repeat tremolo 4 d8
+  cis4 \repeat tremolo 4 d8
+  cis4 \repeat tremolo 4 d8
+  cis4 \repeat tremolo 4 d8
+  cis4 \repeat tremolo 4 d8
+
+  cis4 \repeat tremolo 4 d'8
+  \ottava #1
+  fis4 \repeat tremolo 4 d8
+  fis4 \repeat tremolo 4 d8
+  fis4 \repeat tremolo 4 d8
+  g4 d,8 g bes d
+  \ottava #0
+
 }
 flO = \relative c'' {
   \mark \default
+  \ottava #1
+  g''8 bes
+  \acciaccatura bes8 a[ aes]
+  \acciaccatura a aes[ g]
+  \acciaccatura aes g[ fis]
+  \acciaccatura g fis[ f]
+  \acciaccatura ges f[ e]
+  \ottava #0
 }
 flP = \relative c'' {
   \mark \default
@@ -459,8 +501,9 @@ flP = \relative c'' {
     \flK
     \flL
     \flM
-    %}
     \flN
+    %}
+    \flO
 
   }
 
