@@ -4,14 +4,15 @@
 }
 
 
-flpreA = \relative c' {
+flpreA = \relative c'' {
   d2. \p
-  \repeat unfold 11 d2.
+  \mark \markup { 11x }
+  \repeat volta 11 d2.
   % TODO: Fold this
   \compressFullBarRests
   R1*12
   % Pianno two mesaures; mark cues?
-  \acciaccatura {a'8} ees'2.-> \f 
+  \acciaccatura {a8} ees'2.-> \f 
   \acciaccatura {d,8} a'2.->
   \acciaccatura {a8} ees'2-> \acciaccatura {a,8} ees'4
   \acciaccatura {d,8} a'2->  \acciaccatura {d,8} a'4
@@ -230,9 +231,10 @@ flH = \relative c'' {
   g r %ais,
 }
 flI = \relative c'' {
-  \mark \default
 
   ais4(
+  \mark \markup { \bold I } %\default
+  \bar "||"
   \key d \major
   b4) r fis( \p
   b2) b4(
@@ -259,7 +261,8 @@ flI = \relative c'' {
   fis2.) ~ fis2. ~
   fis4 r r
   r2.
-  e2. ~ e2. % b
+  \ottava #1
+  e'2. ~ e2. % b
   e2. ~ e2. % ais
   \tuplet 3/2 {b8( c cis} \tuplet 3/2 {d dis e} \tuplet 3/2 {eis fis g}
   \tuplet 3/2 {gis a ais} \tuplet 3/2 {b c cis} \tuplet 3/2 {d dis e)}
@@ -270,8 +273,9 @@ flI = \relative c'' {
   \tuplet 3/2 {eis( fis g} \tuplet 3/2 {gis a ais} \tuplet 3/2 {b bis cis}
   \tuplet 3/2 {d dis e} \tuplet 3/2 {eis fis g} \tuplet 3/2 {gis a ais}
   b4)
+  \ottava #0
 
-  dis,,8-. fis dis eis
+  dis,,,8-. fis dis eis
   fis8 fis eis eis dis4
   r4 dis'8-. fis dis eis
   fis8 fis eis eis dis4
@@ -282,38 +286,44 @@ flI = \relative c'' {
 }
 flJ = \relative c'' {
   \mark \default
+  \bar "||"
   \key bes \major
 
-  \tuplet 3/2 {g8([ ees c')} \tuplet 3/2 {g'( c, ees,]} g4 ~
-  \tuplet 3/2 {g8[ ees c')} \tuplet 3/2 {g'( c, ees,]} g4 ~
+  \tuplet 3/2 {ees,8([ g c)} \tuplet 3/2 {g'( c, g]} ees4 ~
+  \tuplet 3/2 {ees8[ g c)} \tuplet 3/2 {g'( c, g]} ees4
 
-  \tuplet 3/2 {g8[ e c')} \tuplet 3/2 {g'( c, e,]} g4 ~
-  \tuplet 3/2 {g8[ e c')} \tuplet 3/2 {g'( c, e,]} g4
+  \tuplet 3/2 {e8[ g c)} \tuplet 3/2 {g'( c, g]} e4 ~
+  \tuplet 3/2 {e8[ g c)} \tuplet 3/2 {g'( c, g]} e4
 
-  \tuplet 3/2 {a8[ f c')} \tuplet 3/2 {a'( c, f,]} a4 ~
-  \tuplet 3/2 {a8[ f c')} \tuplet 3/2 {a'( c, f,]} a4 ~
+  \tuplet 3/2 {f8[ a c)} \tuplet 3/2 {a'( c, a]} f4 ~
+  \tuplet 3/2 {f8[ a c)} \tuplet 3/2 {a'( c, a]} f4
 
-  \tuplet 3/2 {a8[ e cis')} \tuplet 3/2 {a'( cis, e,]} a4 ~
-  \tuplet 3/2 {a8[ e cis')} \tuplet 3/2 {a'( cis, e,]} a4
+  \tuplet 3/2 {e8[ a cis)} \tuplet 3/2 {a'( cis, a]} e4 ~
+  \tuplet 3/2 {e8[ a cis)} \tuplet 3/2 {a'( cis, a]} e4
 
-  \tuplet 3/2 {bes8[ f d')} \tuplet 3/2 {bes'( d, f,]} bes4 ~
-  \tuplet 3/2 {bes8[ f d')} \tuplet 3/2 {bes'( d, f,]} bes4
+  \tuplet 3/2 {f8[ bes d)} \tuplet 3/2 {bes'( d, bes]} f4 ~
+  \tuplet 3/2 {f8[ bes d)} \tuplet 3/2 {bes'( d, bes]} f4
 
-  \tuplet 3/2 {c8[ g e')} \tuplet 3/2 {c'( e, g,]} c4 ~
+  \tuplet 3/2 {g8[ c e)} \tuplet 3/2 {c'( e, c]} g4 ~
 
-  \tuplet 3/2 {c8[ g ees')} \tuplet 3/2 {c'( ees, g,]} c4
+  \tuplet 3/2 {g8[ c ees)} \tuplet 3/2 {c'( ees, c]} g4
 
-  \tuplet 3/2 {d8[ a fis')} \tuplet 3/2 {d'( fis, a,]} d4
-  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4
+  \tuplet 3/2 {a8[ d fis)} \tuplet 3/2 {d'( fis, d]} a4
+  \tuplet 3/2 {bes8[ ees g)} \tuplet 3/2 {ees'( g, ees]} bes4
+  \tuplet 3/2 {a8[ d fis)} \tuplet 3/2 {d'( fis, d]} a4
+  \tuplet 3/2 {bes8[ ees g)} \tuplet 3/2 {ees'( g, ees]} bes4
+  \tuplet 3/2 {a8[ d fis)} \tuplet 3/2 {d'( fis, d]} a4
+  \tuplet 3/2 {bes8[ ees g)} \tuplet 3/2 {ees'( g, ees]} bes4
 
-  \tuplet 3/2 {d8[ a fis')} \tuplet 3/2 {d'( fis, a,]} d4
-  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4
+  %\tuplet 3/2 {d8[ a fis')} \tuplet 3/2 {d'( fis, a,]} d4
+  %\tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4
 
-  \tuplet 3/2 {d8[ a fis')} \tuplet 3/2 {d'( fis, a,]} d4
-  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4 ~
+  %\tuplet 3/2 {d8[ a fis')} \tuplet 3/2 {d'( fis, a,]} d4
+  %\tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4 ~
 
-  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4 ~
-  \tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4)
+  \tuplet 3/2 {bes8[ ees g)} \tuplet 3/2 {ees'( g, ees]} bes4 ~
+  \tuplet 3/2 {bes8[ ees g)} \tuplet 3/2 {ees'( g, ees]} bes4)
+  %\tuplet 3/2 {ees8[ bes g')} \tuplet 3/2 {ees'( g, bes,]} ees4)
 }
 flK = \relative c'' {
   \mark \default
@@ -352,14 +362,14 @@ flK = \relative c'' {
   bes4 ees,8 g ees f
   g4 bes8 ees, bes' d,
   ees4-- ees8 ees ees ees
-  d4 r4 %a4
+  d4 r4 a4 \f
 }
 flL = \relative c'' {
   \mark \default
-  r2
+  %r2
 
-  a4 \f
-  ees'8 ees ees4 a,
+  %a4 \f
+  ees8 ees ees4 a,
   ees'8 a, ees' a, ees' a,
   ees'4 a, r
   r4 r des
@@ -466,13 +476,103 @@ flO = \relative c'' {
   g''8 bes
   \acciaccatura bes8 a[ aes]
   \acciaccatura a aes[ g]
+
   \acciaccatura aes g[ fis]
   \acciaccatura g fis[ f]
   \acciaccatura ges f[ e]
+
+  \acciaccatura f e[ ees]
+  \acciaccatura e ees[ d]
+  \acciaccatura ees d[ cis]
+
+  \acciaccatura d cis[ c]
+  \acciaccatura des c[ b]
+  \acciaccatura c b[ bes]
+
+  aes8 g aes c bes aes
+  g fis g bes a g
   \ottava #0
+  fis,8 a d fis a d
+  bes4
+  \ottava #1
+  d,8 g bes d
+  g8 bes
+  \acciaccatura bes8 a[ aes]
+  \acciaccatura a aes[ g]
+
+  \acciaccatura aes g[ fis]
+  \acciaccatura g fis[ f]
+  \acciaccatura ges f[ e]
+
+  \acciaccatura f e[ ees]
+  \acciaccatura e ees[ d]
+  \acciaccatura ees d[ cis]
+
+  \acciaccatura d cis[ c]
+  \acciaccatura des c[ b]
+  \acciaccatura c b[ bes]
+
+  aes8 g aes c bes aes
+  g fis g bes a g
+  \ottava #0
+
+  fis,8 a d fis a d
+  bes g d bes g d
+  fis a d fis a d
+  bes g d bes g d
+  fis a d fis a d
+  d,, fis a d fis a
+  a, d fis a d fis
+  g4 f ees
+  f ees d
+  ees d c
+
+  aes8 c aes bes c4
+  fis,8 a fis g a4
+  \acciaccatura bes,8 g'4 f ees
+  f ees d
+  ees d c
+  aes8 c aes bes c4
+  fis,8 a fis g a4
+
+  a4( g'') r
+  ees,,( fis'') r
+  a,,4( g'') r
+  ees,,( fis'') r
+  a,,4( g'') r
+  a,,4( g'') r
+  a,,4( g'') d,
+  a4( g'') d,
+  a4( g'') d,
+  a4( g'') d,
+  a4( g'') d,
+  \bar "||"
 }
 flP = \relative c'' {
   \mark \default
+  R2.
+  ees4-. r8 bes'8-. bes4-.
+  ees,4-. g2\fermata
+
+  \compressFullBarRests
+  R2.*9
+  r2.\fermata
+  d2.
+  bes4 a g
+  g2.~g4 r r
+  bes2.
+  g4 f ees
+  ees2.~ees4 r r
+  r4 r ees(
+  aes) bes c
+  ees,2.
+  ees2.~
+  ees2.~\startTrillSpan
+  \repeat unfold 6 {ees2.~}
+  ees2.(
+  d8\stopTrillSpan) r r4 r
+  fis'8 r r4 r
+  g8 r r4 r
 }
 
 
@@ -487,6 +587,7 @@ flP = \relative c'' {
     \key bes \major
     \time 3/4
     %{
+    %}
     \flpreA
     \flA
     \flB
@@ -502,8 +603,9 @@ flP = \relative c'' {
     \flL
     \flM
     \flN
-    %}
     \flO
+    \flP
+    \bar "|."
 
   }
 
