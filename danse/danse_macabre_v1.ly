@@ -11,13 +11,15 @@ flpreA = \relative c'' {
   % TODO: Fold this
   \compressFullBarRests
   R1*12
-  % Piano two mesaures; mark cues?
-  ees2.-> \f 
-  a,2.->
-  ees'2->  ees4
-  a,2->   a4
-  ees'8->-. ees8-. ees4->-. a,4-.
-  ees'8->-. ees8-. ees4->-. a,4-.
+  % Pianno two mesaures; mark cues?
+  \acciaccatura {a8} ees'2.-> \f 
+  \acciaccatura {d,8} a'2.->
+  \acciaccatura {a8} ees'2-> \acciaccatura {a,8} ees'4
+  \acciaccatura {d,8} a'2->  \acciaccatura {d,8} a'4
+  \acciaccatura {a8} ees'8-> ees8-. ees4-> %\acciaccatura {a,8} ees'4->
+	\acciaccatura {d,8} a'4-.
+  \acciaccatura {a8} ees'8-> ees8-. ees4-> %\acciaccatura {a,8} ees'4->
+	\acciaccatura {d,8} a'4-.
 
   ees'4-. a,-. ees'-.
   a,-. ees'-. a,-.
@@ -68,33 +70,36 @@ flB = \relative c'' {
 }
 flC = \relative c' {
   \mark \default
-  fis'4^"pizz." \p r r 
-  fis4 r r
-  fis4 r r
+  \acciaccatura {d8 a'} fis'4 \p r r 
+  \acciaccatura {d,8 a'} fis'4 r r
+  \acciaccatura {d,8 a'} fis'4 r r
 
-  r4 \f g,8^"arco" bes g a
+  r4 \f g,8 bes g a
   bes4 ees,8 g ees f
   g4 bes8 ees, bes' d,
   ees4-- ees8 ees ees ees
   d4 r4 r4
 
-  fis'4^"pizz." r r
-  fis4 r r
-  fis4 r r
+  \acciaccatura {d8 a'} fis'4 r r
+  \acciaccatura {d,8 a'} fis'4 r r
+  \acciaccatura {d,8 a'} fis'4 r r
 
-  r4 \f g,8^"arco" bes g a
+  r4 \f g,8 bes g a
   bes4 ees,8 g ees f
   g4 bes8 ees, bes' d,
   ees4-- ees8 ees ees ees
-  d4  a'8 \ff a a a
-  ees'4 a,8 a a a
-  ees'4 a,4 ees'4
-  a,4 ees'4 a,4
+  d4 \acciaccatura {d8} a' a a a
+  \acciaccatura {a8} ees'4 \acciaccatura {d,8} a' a a a
+  \acciaccatura {a8} ees'4
+	\acciaccatura {d,8} a'4
+	\acciaccatura {a8} ees'4
+  \acciaccatura {d,8} a'4
+	\acciaccatura {a8} ees'4
+	\acciaccatura {d,8} a'4
 }
-flD = \relative c'' {
+flD = \relative c' {
   \mark \default
 
-  \ottava #1
   r4 \acciaccatura {d8 bes'} g'4 g
   r4 \acciaccatura {d,8 bes'} g'4 g
   r4 \acciaccatura {d,8 bes'} g'4 g
@@ -106,8 +111,7 @@ flD = \relative c'' {
   r4 \acciaccatura {ees,8 c'} aes'4 aes
 
   \acciaccatura {d,,8 bes'} g'4
-  \ottava #0
-  g,8-. \ff bes-. g-. a-.
+  g8-. bes-. g-. a-.
   bes4-- a8-. bes-. g-. bes-.
   a([ \prall g)] g-. bes-. g-. a-.
   bes4-- a8-. bes-. g-. bes-.
@@ -139,28 +143,28 @@ flE = \relative c''' {
 }
 flF = \relative c' {
   \mark \default
-  fis'4^"pizz." \p r r 
-  fis4 r r
-  fis4 r r
+  \acciaccatura {d8 a'} fis'4 \p r r 
+  \acciaccatura {d,8 a'} fis'4 r r
+  \acciaccatura {d,8 a'} fis'4 r r
 
-  r4 \f g8^"arco" bes g a
+  r4 \f g8 bes g a
   bes4 ees,8 g ees f
   g4 bes,8 ees bes d
   ees4-- ees8 ees ees ees
   d4 r4 r4
 
-  fis4^"pizz." \p r r
-  fis4 r r
-  fis4 r r
+  \acciaccatura {d,8 a'} fis'4 r r
+  \acciaccatura {d,8 a'} fis'4 r r
+  \acciaccatura {d,8 a'} fis'4 r r
 
-  r4 \f g8^"arco" bes g a
+  r4 \f g8 bes g a
   bes4 ees,8 g ees f
   g4 bes,8 ees bes d
   ees4-- ees8 ees ees ees
   d4 r r
 
   d2. \trill ~ d2. ~ d4 ~ d8 r
-  \acciaccatura {d8 a'} fis'4 \ff
+  \acciaccatura {d8 a'} fis'4
   g r r
   \compressFullBarRests
   R2.*6
@@ -170,10 +174,10 @@ flF = \relative c' {
 flG = \relative c'' {
   \mark \default
   r4 r a4
-  d8-> d d4 d
-  c8-> c c4 c
-  b8-> b b4 b
-  bes8-> bes bes4 bes
+  d8 d d4 d
+  c8 c c4 c
+  b8 b b4 b
+  bes8 bes bes4 bes
   a8 a b b d d
   c8 c b b a a
   c8 c a'4 c,
@@ -187,29 +191,29 @@ flG = \relative c'' {
   cis16( d cis d cis8) r8 a'4
 
   %\acciaccatura{}
-  d,2-> d4
-  c2-> c4
-  b2-> b4
-  bes2-> bes4
+  d,2 d4
+  c2 c4
+  b2 b4
+  bes2 bes4
   a4 b d
   c4 b a
   c2 c4
-
-  bes8-. \p d-. g,-. a-. bes-. c-.
+  \p
+  bes8-. d g, a bes c
   d8 cis d f e d
   g8 fis g bes a g
   c8 b bes a g fis
-  f8\cresc d \! cis c b bes
+  f8 d cis c b bes
   a8 b cis d e f
-  a8(\f \< b c cis d dis)\!
+  a8( b c cis d dis)
     
 }
 flH = \relative c'' {
   \mark \default
   \key f \major
   e'4 \tuplet 3/2 {e,8( f e)} e4-.
-  \repeat percent 15 {r4 \tuplet 3/2 {e8( f e)} e4-.}
-  r4 r f^"pizz." \cresc
+  \repeat unfold 15 {r4 \tuplet 3/2 {e8( f e)} e4-.}
+  r4 r f
   e r f
   d r e
   cis r d
@@ -224,7 +228,7 @@ flH = \relative c'' {
   e r g
   g r a
   g f e
-  g \! \f r^"arco" %ais,
+  g r %ais,
 }
 flI = \relative c'' {
 
@@ -232,8 +236,8 @@ flI = \relative c'' {
   \mark \markup { \bold I } %\default
   \bar "||"
   \key d \major
-  b4) r fis'( \p
-  b2)_\markup { \italic {molto espressivo} } b4(
+  b4) r fis( \p
+  b2) b4(
   ais2) ais4(
   a2) a4(
   g2) g4(
@@ -258,7 +262,7 @@ flI = \relative c'' {
   fis4 r r
   r2.
   \ottava #1
-  e2. ~ e2. % b
+  e'2. ~ e2. % b
   e2. ~ e2. % ais
   \tuplet 3/2 {b8( c cis} \tuplet 3/2 {d dis e} \tuplet 3/2 {eis fis g}
   \tuplet 3/2 {gis a ais} \tuplet 3/2 {b c cis} \tuplet 3/2 {d dis e)}
@@ -323,10 +327,10 @@ flJ = \relative c'' {
 }
 flK = \relative c'' {
   \mark \default
-  r2. d2 \ff d4
+  r2. d2 d4
   r2. d2 d4
   r2. d2 d4(
-  a'2) \dim a4 \!
+  a'2) a4
   g2 g4
   f2 f4
   ees2 ees4
@@ -334,12 +338,12 @@ flK = \relative c'' {
   ees2 ees4
   d2 d4
   ees2 ees4
-  d2 \p d4
+  d2 d4
   d2 d4
   d2 d4
   d2 d4
 
-  d4 a8^\markup{\italic stacc.} a a a
+  d4 a8 a a a
   d4 a8 a a a
   d4 a8 a a a
   d4 a4 d
@@ -583,17 +587,24 @@ flP = \relative c'' {
     \key bes \major
     \time 3/4
     %{
-    \flpreA
-    \flA \flB \flC \flD
-    \flE \flF \flG \flH
-    \flI \flJ \flK \flL
-    \flM \flN \flO \flP
     %}
     \flpreA
-    \flA \flB \flC \flD
-    \flE \flF \flG \flH
-    \flI \flJ \flK \flL
-    \flM \flN \flO \flP
+    \flA
+    \flB
+    \flC
+    \flD
+    \flE
+    \flF
+    \flG
+    \flH
+    \flI
+    \flJ
+    \flK
+    \flL
+    \flM
+    \flN
+    \flO
+    \flP
     \bar "|."
 
   }
