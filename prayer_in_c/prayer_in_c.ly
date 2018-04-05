@@ -93,9 +93,13 @@ fAMusic = \relative c'' {
   \repeat unfold 8 {d8-.}
   \repeat unfold 8 {d8-.}
 
-  R1*8
-  \repeat unfold 2 {
+  R1*4
   c4. c8 e( d) d( c)
+  c4. c8 e( d) d( c)
+  c4. c8 e4 d8( c d)
+  d4. r2
+  \repeat unfold 2 {
+  c'4. c8 e( d) d( c)
   c4. c8 e( d) d( c)
   c4. c8 e4 d8( c d)
   d4. r2
@@ -179,14 +183,21 @@ fBMusic = \relative c'' {
     \repeat unfold 2 {b'8-. d, g d}
     \repeat unfold 2 {a'8-. d, f d}
 
-  R1*4
 
+  \repeat unfold 2 {
+  a16( b c d e d c b a b c d e d c b)
+  c16( d e f g f e d c d e f g f e d)
+  g,16( a b c d c b a g a b c d c b a)
+  d16( e f g a g f e d e f g a g f e)
+  }
 
+  %{
   %\mainRiff
   a'4. a8([ b]) c4.-.
   e,4. e8( f4-.) e-. 
   d4. d8( e f) d4-.
   f4. f8( g4-.) f4-.
+    %}
 
   a8 b16( c) c8 c16( b a b c8) c4
   e,8( e16 f g f e f g f e f g4)
@@ -226,23 +237,21 @@ fCMusic = \relative c'' {
   \repeat unfold 8 {b8-.}
   \repeat unfold 8 {a8-.}
 
-  \repeat unfold 2 {
-  a,16( b c d e d c b a b c d e d c b)
-  c16( d e f g f e d c d e f g f e d)
-  g,16( a b c d c b a g a b c d c b a)
-  d16( e f g a g f e d e f g a g f e)
+  \repeat unfold 3 {
+    \mainRiff
   }
 
+  e'4. e8 g( f) f( e)
+  e4. e8 g( f) f( e)
+  d4. d8 c4 d8( e)
+  f8 f4. r2
 
+  %{
   e4. e8 g( f) f( e)
   e4. e8 g( f) f( e)
   d4. d8 c4 d8( e)
   f8 f4. r2
-
-  e4. e8 g( f) f( e)
-  e4. e8 g( f) f( e)
-  d4. d8 c4 d8( e)
-  f8 f4. r2
+    %}
 
 }
 fDMusic = \relative c'' {
@@ -260,9 +269,17 @@ fDMusic = \relative c'' {
   \repeat unfold 8 {\mainRiffBass}
   %}
 
-  \repeat unfold 3 {\mainRiffBass}
+  %\repeat unfold 3 {\mainRiffBass}
 
+  R1*4 % temp
+
+  R1*4
+  \wholeBass
   \mainBass
+  a,4. a8 a4 a4
+  c4. c8 c4 c4
+  g4. g8 g4 g4
+  d'2 r2
   \ottava #0
 }
 fEMusic = \relative c'' {
