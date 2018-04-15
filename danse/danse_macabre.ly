@@ -569,11 +569,11 @@ flP = \relative c'' {
   aes,) bes c
   ees2.
   ees,2.~
-  ees2.~\startTrillSpan
-  \repeat unfold 6 {ees2.~}
-  ees2.(
+  ees2.\startTrillSpan
+  \repeat unfold 6 {d2.~}
+  d2.(
   d8\stopTrillSpan) r r4 r
-  \acciaccatura{d8} fis'8 r r4 r
+  \acciaccatura{d'8} fis8 r r4 r
   g8 r r4 r
 }
 
