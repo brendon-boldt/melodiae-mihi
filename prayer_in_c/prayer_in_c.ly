@@ -55,6 +55,7 @@ mainMelody = \relative c'' {
 
 fAMusic = \relative c'' {
   %{
+  %}
   \repeat unfold 4 {R1*4}
 
   \repeat unfold 2 {\mainMelody}
@@ -62,9 +63,9 @@ fAMusic = \relative c'' {
   R1*4
   \repeat unfold 2 {\mainMelody}
   \repeat unfold 2 {\mainMelody}
-  %}
 
   %{
+  %}
   R1*12
   \repeat unfold 1 {
     r4 e8-. e-. r4 e8-. e-.
@@ -86,7 +87,6 @@ fAMusic = \relative c'' {
   r2 g'8-. d f d
   r2 a'8-. f a, d,
   }
-  %}
 
   \repeat unfold 8 {e8-.}
   \repeat unfold 8 {e8-.}
@@ -109,6 +109,7 @@ fAMusic = \relative c'' {
 }
 fBMusic = \relative c'' {
   %{
+  %}
   \repeat unfold 2 {R1*4}
 
   \repeat unfold 2 {
@@ -140,11 +141,11 @@ fBMusic = \relative c'' {
   e4. e8 g( f) f( e)
   d4. d8 c4 d8( e)
   f8 f4. r2
-  %}
 
   %%% Change %%%
 
   %{
+  %} 
   R1*8
   \relative c''
   \repeat unfold 2 {
@@ -160,15 +161,15 @@ fBMusic = \relative c'' {
     r8 b8-. b4-. r8 b8-. b4-.
     r8 a8-. a4-. r8 a8-. a4-.
   }
-  %} 
 
-  %{
+  %{ % Not in
   \repeat unfold 2 {
     r4 c-. r4 c-.
     r4 c-. r4 c-.
     r4 b-. r4 b-.
     r4 a-. r4 a-.
   }
+    %}
 
   \repeat unfold 1 {
     \repeat unfold 2 {c8-. e, a e}
@@ -176,9 +177,8 @@ fBMusic = \relative c'' {
     \repeat unfold 2 {b'8-. d, g d}
     \repeat unfold 2 {a'8-. d, f d}
   }
-    %}
 
-    \repeat unfold 2 {c'8-. e, a e}
+    \repeat unfold 2 {c''8-. e, a e}
     \repeat unfold 2 {c'8-. e, g e}
     \repeat unfold 2 {b'8-. d, g d}
     \repeat unfold 2 {a'8-. d, f d}
@@ -210,12 +210,13 @@ fBMusic = \relative c'' {
 }
 fCMusic = \relative c'' {
   %{
-  \repeat unfold 4 { \mainRiff }
-  \repeat unfold 4 { \mainRiff }
-  \repeat unfold 4 { \mainRiff }
   %}
+  \repeat unfold 4 { \mainRiff }
+  \repeat unfold 4 { \mainRiff }
+  \repeat unfold 4 { \mainRiff }
 
   %{
+  %}
   R1*4
   \repeat unfold 3 {
     r4 a-. r4 a-.
@@ -230,9 +231,8 @@ fCMusic = \relative c'' {
   f'8.-. e16 d16 c d8 r2
   a8.-. d16 e8 f8 r2
   }
-  %}
 
-  \repeat unfold 8 {c8-.}
+  \repeat unfold 8 {c,8-.}
   \repeat unfold 8 {c8-.}
   \repeat unfold 8 {b8-.}
   \repeat unfold 8 {a8-.}
@@ -257,21 +257,19 @@ fCMusic = \relative c'' {
 fDMusic = \relative c'' {
   \ottava #-1
   %{
+  %}
   R1*4 \wholeBass \mainBass \mainBass
 
   R1*4 \wholeBass \mainBass \mainBass
 
   \repeat unfold 4 {\mainBass}
-  %}
 
 
   %{
-  \repeat unfold 8 {\mainRiffBass}
   %}
+  \repeat unfold 8 {\mainRiffBass}
 
   %\repeat unfold 3 {\mainRiffBass}
-
-  R1*4 % temp
 
   R1*4
   \wholeBass
@@ -284,12 +282,12 @@ fDMusic = \relative c'' {
 }
 fEMusic = \relative c'' {
   %{
+  %}
   \repeat unfold 4 {\perc}
 
-  R1*4 R1*4
+  r1*4 r1*4
   \repeat unfold 2 {\perc}
   \repeat unfold 4 {\perc}
-  %}
   R1*16
   R1*16
   \repeat unfold 4 {\perc}
@@ -305,55 +303,87 @@ fEMusic = \relative c'' {
       (loop (cdr x)))))))
 
 
-\version "2.18.2"
-\score { <<
-  \new Staff \with { 
+fAPart = \new Staff \with { 
     instrumentName = #"Flute 1"
     midiInstrument = #"flute"
   } {
 	\tempo 4 = 120
     \key a \minor
     \time 4/4
+    \compressFullBarRests
     \fAMusic
+    \bar "|."
   }
 
-  \new Staff \with { 
+fBPart = \new Staff \with { 
     instrumentName = #"Flute 2"
     midiInstrument = #"flute"
   } {
     \key a \minor
     \time 4/4
+    \compressFullBarRests
     \fBMusic
+    \bar "|."
   }
 
-  \new Staff \with { 
+fCPart = \new Staff \with { 
     instrumentName = #"Flute 3"
     midiInstrument = #"flute"
   } {
     \key a \minor
     \time 4/4
+    \compressFullBarRests
     \fCMusic
+    \bar "|."
   }
 
-  \new Staff \with { 
+fDPart = \new Staff \with { 
     instrumentName = #"Flute 4"
     midiInstrument = #"flute"
   } {
     \key a \minor
     \time 4/4
+    \compressFullBarRests
     \fDMusic
+    \bar "|."
   }
 
-  \new Staff \with { 
+fEPart = \new Staff \with { 
     instrumentName = #"Flute 5"
     midiInstrument = #"woodblock"
   } {
     \key a \minor
     \time 4/4
+    \compressFullBarRests
     \fEMusic
+    \bar "|."
   }
-   
->>
-\layout { }
-\midi { }}
 
+
+\version "2.18.2"
+\book {
+  \score { <<
+
+    \fAPart
+    \fBPart
+    \fCPart
+    \fDPart
+    \fEPart
+     
+  >>
+  \layout { }
+  \midi { }}
+}
+
+\book {
+  \score { << \fAPart >> }
+}
+\book {
+  \score { << \fBPart >> }
+}
+\book {
+  \score { << \fDPart >> }
+}
+\book {
+  \score { << \fCPart \fEPart >> }
+}

@@ -24,7 +24,7 @@ flpreA = \relative c'' {
 }
 flA = \relative c'' {
   \mark \default
-  r4 g8-. bes-. g-. a-.
+  r4 g8-. \mp bes-. g-. a-.
   bes4-- a8-. bes-. g-. bes-.
   a([ g)] g-. bes-. g-. a-.
   bes4-- a8-. bes-. g-. bes-.
@@ -33,17 +33,17 @@ flA = \relative c'' {
   bes8([ aes]) aes-. c8-. aes-. bes-.
   c4-. aes8-. c-. bes-. aes-.
 
-  g4-. \acciaccatura {d'8} bes'4-. g,-.
-  r4 \acciaccatura {d'8} bes'4-. g,-.
-  r4 \acciaccatura {d'8} bes'4-. g,-.
-  r4 \acciaccatura {d'8} bes'4-. g,-.
+  g4-. \acciaccatura {d'8} bes'4-. g-.
+  r4 \acciaccatura {d8} bes'4-. g-.
+  r4 \acciaccatura {d8} bes'4-. g-.
+  r4 \acciaccatura {d8} bes'4-. g-.
 
-  r4 \acciaccatura {ees'8} c'4-. aes,-.
-  r4 \acciaccatura {ees'8} c'4-. aes,-.
-  r4 \acciaccatura {ees'8} c'4-. aes,-.
-  r4 \acciaccatura {ees'8} c'4-. aes,-.
+  r4 \acciaccatura {ees8} c'4-. aes-.
+  r4 \acciaccatura {ees8} c'4-. aes-.
+  r4 \acciaccatura {ees8} c'4-. aes-.
+  r4 \acciaccatura {ees8} c'4-. aes-.
 
-  \acciaccatura {g8 d'} bes'4-. r4 d,,4
+  \acciaccatura {d,} bes'4-. r4 d,,4 \mf
 
 }
 flB = \relative c'' {
@@ -78,7 +78,7 @@ flC = \relative c' {
   ees4-- ees8 ees ees ees
   d4 r4 r4
 
-  fis'4^"pizz." r r
+  fis'4^"pizz." \p r r
   fis4 r r
   fis4 r r
 
@@ -86,7 +86,7 @@ flC = \relative c' {
   bes4 ees,8 g ees f
   g4 bes8 ees, bes' d,
   ees4-- ees8 ees ees ees
-  d4  a'8 \ff a a a
+  d4  a''8 \ff a a a
   ees'4 a,8 a a a
   ees'4 a,4 ees'4
   a,4 ees'4 a,4
@@ -160,7 +160,8 @@ flF = \relative c' {
   d4 r r
 
   d2. \trill ~ d2. ~ d4 ~ d8 r
-  \acciaccatura {d8 a'} fis'4 \ff
+  %\acciaccatura {d8 a'} fis'4 \ff
+  fis'4 \ff
   g r r
   \compressFullBarRests
   R2.*6
@@ -169,7 +170,7 @@ flF = \relative c' {
 }
 flG = \relative c'' {
   \mark \default
-  r4 r a4
+  r4 r a4 \mf
   d8-> d d4 d
   c8-> c c4 c
   b8-> b b4 b
@@ -178,7 +179,7 @@ flG = \relative c'' {
   c8 c b b a a
   c8 c a'4 c,
 
-  bes8 a g a bes c
+  bes8 \mp a g a bes c
   d4 r8 a8 g a
   bes8 a g bes a g
   c4 r8 c8 bes a
@@ -187,7 +188,7 @@ flG = \relative c'' {
   cis16( d cis d cis8) r8 a'4
 
   %\acciaccatura{}
-  d,2-> d4
+  d,2-> \f d4
   c2-> c4
   b2-> b4
   bes2-> bes4
@@ -260,7 +261,7 @@ flI = \relative c'' {
   \ottava #1
   e2. ~ e2. % b
   e2. ~ e2. % ais
-  \tuplet 3/2 {b8( c cis} \tuplet 3/2 {d dis e} \tuplet 3/2 {eis fis g}
+  \tuplet 3/2 {b8( \mp c cis} \tuplet 3/2 {d dis e} \tuplet 3/2 {eis fis g}
   \tuplet 3/2 {gis a ais} \tuplet 3/2 {b c cis} \tuplet 3/2 {d dis e)}
   \tuplet 3/2 {eis( fis g} \tuplet 3/2 {gis a ais} \tuplet 3/2 {b ais a}
   \tuplet 3/2 {gis g fis} \tuplet 3/2 {f e dis} \tuplet 3/2 {d cis c)}
@@ -271,13 +272,14 @@ flI = \relative c'' {
   b4)
   \ottava #0
 
-  dis,,,8-. fis dis eis
+  %dis,,,8-. fis dis eis
+  dis,,8-. \mf fis dis eis
   fis8 fis eis eis dis4
-  r4 dis'8-. fis dis eis
+  r4 dis8-. \f fis dis eis
   fis8 fis eis eis dis4
-  r4 c'8 ees c d
+  r4 c'8 \ff ees c d
   ees8 ees d d c4
-  r4 c,8 ees c d
+  r4 c,8 \mf ees c d
   ees8 ees d d c4
 }
 flJ = \relative c'' {
@@ -323,10 +325,11 @@ flJ = \relative c'' {
 }
 flK = \relative c'' {
   \mark \default
-  r2. d2 \ff d4
+  r2. d'2 \ff d4
+  r2. d2 d4
   r2. d2 d4
   r2. d2 d4(
-  a'2) \dim a4 \!
+  a2) \dim a4 \!
   g2 g4
   f2 f4
   ees2 ees4
@@ -339,7 +342,7 @@ flK = \relative c'' {
   d2 d4
   d2 d4
 
-  d4 a8^\markup{\italic stacc.} a a a
+  d4 a8^\markup{\italic stacc.} \pp a a a
   d4 a8 a a a
   d4 a8 a a a
   d4 a4 d
@@ -349,14 +352,14 @@ flK = \relative c'' {
   g4 bes8 ees, bes' d,
   ees4-- ees8 ees ees ees
 
-  d4 a'8 a a a
+  d4 a'8 \pp a a a
   d4 a8 a a a
   d4 a8 a a a
   d4 a4 d
 
   r4 g8 bes g a
   bes4 ees,8 g ees f
-  g4 bes8 ees, bes' d,
+  g4 bes,8 ees bes d
   ees4-- ees8 ees ees ees
   d4 r4 a4 \f
 }
@@ -368,22 +371,22 @@ flL = \relative c'' {
   ees8 ees ees4 a,
   ees'8 a, ees' a, ees' a,
   ees'4 a, r
-  r4 r des
-  des8 des des4 des
+  r4 r des \dim
+  des8 \! des des4 des
   des8 des des des des des
   des4 des r4
   r4 r c
   c8 c c4 r
   r4 r bes
   bes8 bes bes4 bes4 \p % g + bes => fis + a
-  a4 r4 r
+  a4-- r4 r
 
   R2.
-  r4 r d(
+  r4 r d( \mp
   f4 e d
   e2.
   a,2.)
-  r4 r c(
+  r4 r c( \mf
   ees4 d c
   d2.
   g,2.)
@@ -391,12 +394,12 @@ flL = \relative c'' {
   bes4 a g
   a2 e4)
 
-  g2. ~ g2.( ees2.)
+  g2.\p ~ g2.( ees2.)
   d2.~d2.~d4 r r
 
   R2.
 
-  a'2( bes4
+  a'2( \cresc bes4 \!
   d des c)
   b2( c4)
   ees2( d4)
@@ -406,11 +409,12 @@ flL = \relative c'' {
 flM = \relative c'' {
   \mark \default
 
-  r4 c8( ees c d
+  r4 c8( \mp ees c d
   ees8-> c ees d c bes)
   r4 c8( ees c d
   ees8-> c ees d c bes)
-  r4 c'8( ees c d)
+  r4 c'8( \f ees c d)
+  ees8->( c ees d c bes)
   ees8->( c ees d c bes)
   ees8->( c ees d c bes)
   ees8-. c-. ees-. d-. c-. bes-.
@@ -418,8 +422,8 @@ flM = \relative c'' {
   fis8 c ees d c a
   c8 bes a fis a g
 
-  fis8 c'( ees d c a)
-  r8 c( ees d c a)
+  fis8 c'( \p ees d c a)
+  r8 c( \cresc ees \! d c a)
   r8 c( ees d c a)
   r8 c( ees d c a)
 
@@ -449,20 +453,21 @@ flN = \relative c'' {
   a([ g)] g bes g a
   bes4 a8 bes g bes
   d,4 e8 fis d fis
-  d'4 a,8 bes b cis
+  d'4 
   \ottava #0
-  d,4 \repeat tremolo 4 d8
-  cis4 \repeat tremolo 4 d8
-  cis4 \repeat tremolo 4 d8
+  a,,8 bes b cis
+  d4 \repeat tremolo 4 d8 \mf
+  cis4 \repeat tremolo 4 d8 \>
   cis4 \repeat tremolo 4 d8
   cis4 \repeat tremolo 4 d8
 
-  cis4 \repeat tremolo 4 d'8
+  cis4 \!
   \ottava #1
+  \repeat tremolo 4 d'8
+  fis4 \< \repeat tremolo 4 d8
   fis4 \repeat tremolo 4 d8
   fis4 \repeat tremolo 4 d8
-  fis4 \repeat tremolo 4 d8
-  g4 d,8 g bes d
+  g4 \! d,8 g bes d
   \ottava #0
 
 }
@@ -512,14 +517,14 @@ flO = \relative c'' {
   g fis g bes a g
   \ottava #0
 
-  fis,8 a d fis a d
-  bes g d bes g d
-  fis a d fis a d
-  bes g d bes g d
-  fis a d fis a d
-  d,, fis a d fis a
-  a, d fis a d fis
-  g4 f ees
+  fis,8( \mf a d fis a d)
+  bes( g d bes g d)
+  fis( a d fis a d)
+  bes( g d bes g d)
+  fis( a d fis a d)
+  d,,( fis a d fis a)
+  a,( d fis a d fis
+  g4) \fff f ees
   f ees d
   ees d c
 
@@ -531,17 +536,18 @@ flO = \relative c'' {
   aes8 c aes bes c4
   fis,8 a fis g a4
 
-  a4( g'') r
-  ees,,( fis'') r
-  a,,4( g'') r
-  ees,,( fis'') r
-  a,,4( g'') r
-  a,,4( g'') r
-  a,,4( g'') d,
-  a4( g'') d,
-  a4( g'') d,
-  a4( g'') d,
-  a4( g'') d,
+  a'4( g') r
+  ees,( fis') r
+  a,4( g') r
+  ees,( fis') r
+  a,4( g') r
+  a,4( g') r
+  a,4( g') r
+  a,4( g') a,
+  a4( g') a,
+  a4( g') a,
+  a4( g') a,
+  a4( g') a,--
   \bar "||"
 }
 flP = \relative c'' {
@@ -559,15 +565,15 @@ flP = \relative c'' {
   bes2.
   g4 f ees
   ees2.~ees4 r r
-  r4 r ees(
-  aes) bes c
-  ees,2.
-  ees2.~
+  r4 r ees'(
+  aes,) bes c
+  ees2.
+  ees,2.~
   ees2.~\startTrillSpan
   \repeat unfold 6 {ees2.~}
   ees2.(
   d8\stopTrillSpan) r r4 r
-  fis'8 r r4 r
+  \acciaccatura{d8} fis'8 r r4 r
   g8 r r4 r
 }
 
@@ -601,5 +607,6 @@ flP = \relative c'' {
    
 >>
 \layout { }
-\midi { }}
+%\midi { }
+}
 
